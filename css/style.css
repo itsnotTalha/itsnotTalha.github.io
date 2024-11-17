@@ -3475,7 +3475,7 @@ input[type="button"].btn-block {
       font-size: 1.60rem;
       line-height: inherit;
       white-space: nowrap;
-      font-family: 'Brush Script MT','Brush Script Std', cursive;
+      font-family: 'Brush Script MT','Brush Script Std', cursive !important;
     }
   .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none; }
