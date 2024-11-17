@@ -3467,14 +3467,16 @@ input[type="button"].btn-block {
     -ms-flex-pack: justify;
     justify-content: space-between; }
 
-.navbar-brand {
-  display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  margin-right: 1rem;
-  font-size: 1.25rem;
-  line-height: inherit;
-  white-space: nowrap; }
+    .navbar-brand {
+      display: inline-block;
+      padding-top: 0.3125rem;
+      padding-bottom: 0.3125rem;
+      margin-right: 1rem;
+      font-size: 1.60rem;
+      line-height: inherit;
+      white-space: nowrap;
+      font-family: 'Brush Script MT','Brush Script Std', cursive;
+    }
   .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none; }
 
