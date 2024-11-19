@@ -3452,7 +3452,7 @@ input[type="button"].btn-block {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.5rem 1rem; }
+  padding: 0.2rem 1rem; }
   .navbar > .container,
   .navbar > .container-fluid {
     display: -webkit-box;
@@ -3469,10 +3469,10 @@ input[type="button"].btn-block {
 
     .navbar-brand {
       display: inline-block;
-      padding-top: 0.3125rem;
-      padding-bottom: 0.3125rem;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
       margin-right: 1rem;
-      font-size: 1.0rem;
+      font-size: 1.2rem;
       line-height: inherit;
       white-space: nowrap;
       font-family: 'Brush Script MT','Brush Script Std', cursive !important;
@@ -3500,8 +3500,8 @@ input[type="button"].btn-block {
 
 .navbar-text {
   display: inline-block;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem; }
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem; }
 
 .navbar-collapse {
   -ms-flex-preferred-size: 100%;
@@ -3514,8 +3514,8 @@ input[type="button"].btn-block {
   align-items: center; }
 
 .navbar-toggler {
-  padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
   line-height: 1;
   background-color: transparent;
   border: 1px solid transparent;
