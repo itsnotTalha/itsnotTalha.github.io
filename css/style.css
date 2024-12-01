@@ -9325,7 +9325,11 @@ textarea.form-control {
   height: 180px; }
 
 .blog-entry {
-  position: relative; }
+  position: relative;
+  width: 100%; /* Ensure it takes full width */
+  height: 300px; /* Fixed height for consistent container size */
+  overflow: hidden; /* Hide any overflowing content */
+  margin-bottom: 30px; /* Bottom margin for spacing between entries */ }
   @media (min-width: 768px) {
     .blog-entry {
       margin-bottom: 30px; } }
