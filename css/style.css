@@ -9329,7 +9329,8 @@ textarea.form-control {
   width: 100%; /* Ensure it takes full width */
   height: 300px; /* Fixed height for consistent container size */
   overflow: hidden; /* Hide any overflowing content */
-  margin-bottom: 30px; /* Bottom margin for spacing between entries */ }
+  margin-bottom: 30px;
+  border-radius: 8px; /* Bottom margin for spacing between entries */ }
   @media (min-width: 768px) {
     .blog-entry {
       margin-bottom: 30px; } }
@@ -9710,3 +9711,182 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+    /* From Uiverse.io by barisdogansutcu */ 
+.cute_button {
+  width: 10em;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge #ffc107;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 0.5s;
+  border-radius: 0.3em;
+  font-size:10px;
+  font-weight: bold;
+  cursor: pointer;}
+  .cute_button::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: black;
+    transition: 0.5s;
+    transform-origin: center;
+  }
+  
+  .cute_button::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: black;
+    transition: 0.5s;
+  }
+  
+  .cute_button:hover::before,
+  .cute_button:hover::after {
+    transform: scale(0);
+  }
+  
+  .cute_button:hover {
+    box-shadow: inset 0px 0px 25px #ffc107;
+  }
+  .cute_button:active {
+    box-shadow: none;
+    background-color: #c7d3dd;
+  }
+  
+
+.cutest_button {
+  width: 10em;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge #ffc107;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 0.5s;
+  border-radius: 0.3em;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cutest_button::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: black;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.cutest_button::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: black;
+  transition: 0.5s;
+}
+
+.cutest_button:hover::before,
+.cutest_button:hover::after {
+  transform: scale(0);
+}
+
+.cutest_button:hover {
+  box-shadow: inset 0px 0px 25px #ffc107;
+}
+.cutest_button:active {
+  box-shadow: none;
+  background-color: #c7d3dd;
+}
+
+/* Certificate container with full image visibility */
+.certificate-container {
+  background-size: contain;  /* Adjusts image to cover the container */
+  background-repeat: no-repeat; /* Prevents image repetition */
+  background-position: center; /* Centers the image */
+  width: 100%; /* Full width of the parent */
+  height: 300%; /* Fixed height for the image */
+  margin-bottom: 12px; /* Space between image and text */
+  display: block;
+}
+
+
+/* Hover effect for the certificate container */
+.certificate-container:hover {
+  /*transform: scale(1.05); /* Slight zoom-in effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+@media (min-width: 768px) {
+  .certificate-container {
+    height: 300px; /* Height for tablets and larger screens */
+    max-width: 400px; /* Optional: Adjust maximum width */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .certificate-container {
+    height: auto; /* Auto height for smaller screens */
+    width: 100%; /* Full width on small screens */
+    aspect-ratio: 1056 / 816; /* Maintain aspect ratio */
+  }
+}
+
+/* Optional text overlay for certificates */
+.certificate-container .text {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Fade-in effect */
+}
+
+.certificate-container:hover .text {
+  opacity: 1; /* Show overlay on hover */
+}
+.matha {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content vertically (if needed) */
+  text-align: center; /* Ensures the text inside is centered */
+  margin: 0 auto; /* Centers the text block itself within its parent */
+  cursor: default;
+  font-size: 18px;
+}
+.matha:hover{
+  color: #ffc107;
+}
+.matha h3 {
+  font-size: 20px; /* Adjust for heading size */
+  font-weight: normal; /* Optional: Make the heading stand out */
+  color: #fff; /* Adjust color as needed */
+}
