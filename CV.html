@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Gamma</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/ionicons.min.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/lightbox.css" />
+
+    <style>
+        /* Zoom Hover Effect */
+        .zoom-effect {
+            overflow: hidden;
+            transition: transform 0.3s ease-out;
+        }
+
+        .zoom-effect:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- CV Viewer Styling --- */
+        .cv-frame {
+            width: 100%;
+            height: 750px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1.5px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+        }
+
+        .cv-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: brightness(0.95);
+        }
+
+        /* Download Button */
+        .btn-glow {
+            color: #fff;
+            background: linear-gradient(90deg, #00c6ff, #ffbd39);
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-glow:hover {
+            transform: scale(1.07);
+            box-shadow: 0 0 20px rgba(0, 114, 255, 0.6);
+        }
+
+        /* Responsive for smaller screens */
+        @media (max-width: 768px) {
+            .cv-frame {
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <section>
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Back to Home</a>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section>
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-5">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <h1 class="big big-2">CV</h1>
+                    <h2 class="mb-4">Curriculum Vitae</h2>
+                    <p>Here are some CV I have accomplished so far.</p>
+                </div>
+            </div>
+
+            <!-- CV Grid -->
+            <div class="row justify-content-center">
+                <!-- CV 1 -->
+                <div class="col-md-6 col-lg-6 text-center ftco-animate mb-5 cv-item">
+                    <div class="cv-frame mb-3">
+                        <iframe src="documents/Talha_Jubayer_CV.pdf" title="Talha Jubayer CV" class="cv-viewer"></iframe>
+                    </div>
+                    <a href="documents/Talha_Jubayer_CV.pdf" download class="btn btn-glow py-3 px-5">
+                        <span class="icon-download"></span> Download
+                    </a>
+                </div>
+
+                <!-- CV 2 -->
+                <div class="col-md-6 col-lg-6 text-center ftco-animate mb-5 cv-item">
+                    <div class="cv-frame mb-3">
+                        <iframe src="documents/Talha_Jubayer_CV_Alt.pdf" title="Talha Jubayer Alternate CV" class="cv-viewer"></iframe>
+                    </div>
+                    <a href="documents/Talha_Jubayer_CV_Alt.pdf" download class="btn btn-glow py-3 px-5">
+                        <span class="icon-download"></span> Download
+                    </a>
+                </div>
+
+                <!-- 🔽 To add more CVs later, copy this block -->
+                <!--
+                <div class="col-md-6 col-lg-6 text-center ftco-animate mb-5 cv-item">
+                    <div class="cv-frame mb-3">
+                        <iframe src="documents/Another_CV.pdf" title="Another CV" class="cv-viewer"></iframe>
+                    </div>
+                    <a href="documents/Another_CV.pdf" download class="btn btn-glow py-3 px-5">
+                        <span class="icon-download"></span> Download CV 3
+                    </a>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div class="container">
+        <br><br>
+        <div class="row justify-content-center">
+            <div class="col-md-7 ftco-animate text-center">
+                <h2>Have a<span> Question? </span>
+                    <a href="https://forms.gle/u1wBY7vxkBi6oghZA" class="btn btn-primary py-3 px-5">Click Here</a>
+                </h2>
+            </div>
+        </div>
+        <br>
+        <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+            <li class="ftco-animate normal-txt">Find me on </li>
+            <li class="ftco-animate"><a href="https://www.linkedin.com/in/talhajubayer737"><span
+                        class="icon-linkedin"></span></a></li>
+            <li class="ftco-animate"><a href="https://x.com/not_ur_daddie"><span
+                        class="icon-twitter"></span></a></li>
+            <li class="ftco-animate"><a href="https://www.facebook.com/Muhitnomore"><span
+                        class="icon-facebook"></span></a></li>
+            <li class="ftco-animate"><a href="https://www.instagram.com/talhajubayermuhiit"><span
+                        class="icon-instagram"></span></a></li>
+        </ul>
+        <br>
+    </div>
+
+    <!-- Loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+        </svg>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
