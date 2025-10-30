@@ -115,6 +115,12 @@ document.addEventListener('DOMContentLoaded', function() {
     featureCards.forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.1}s`;
     });
+
+    // Staggered animation for achievement frames
+    const achievementFrames = document.querySelectorAll('.achievement-frame');
+    achievementFrames.forEach((frame, index) => {
+        frame.style.transitionDelay = `${index * 0.15}s`;
+    });
     
     // Contact form handling
     const contactForm = document.getElementById('contactForm');
