@@ -1,0 +1,156 @@
+:root {
+    --primary-green: #2e7d32;
+    --light-green: #e8f5e9;
+    --bg-gray: #f4f7f6;
+    --text-dark: #333;
+    --text-muted: #666;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-gray);
+    margin: 0;
+    color: var(--text-dark);
+}
+
+/* Header */
+.top-nav {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* Card Section */
+.verification-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.manufacturer { font-size: 1.5rem; margin-bottom: 5px; }
+
+.verified-badge {
+    color: var(--primary-green);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.product-image-container {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.product-img { max-width: 150px; }
+
+.product-name { font-size: 1.2rem; margin-bottom: 25px; }
+
+/* Retailer Box */
+.retailer-box {
+    background: #f9f9f9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 25px;
+
+}
+
+.retailer-info .label { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
+.retailer-name { font-weight: bold; margin: 2px 0; }
+.retailer-address { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+
+/* Details */
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.serial-tag {
+    background: #f0f2f5;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.bold { color: var(--text-dark); font-weight: bold; }
+
+/* Buttons and Alerts */
+.outline-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 12px;
+    border-radius: 25px;
+    margin: 20px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.info-notice {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.status-box.authentic {
+    background: var(--light-green);
+    border-radius: 8px;
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-title { font-weight: bold; color: #1b5e20; margin: 0; }
+.status-sub { font-size: 0.8rem; margin: 0; }
+
+/* Footer */
+.bottom-action {
+    border-top: 2px solid var(--primary-green);
+    background: var(--white);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    color: var(--primary-green);
+    font-weight: bold;
+}
