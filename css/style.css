@@ -9815,78 +9815,1100 @@ textarea.form-control {
   background-color: #c7d3dd;
 }
 
-/* Certificate container with full image visibility */
-.certificate-container {
-  background-size: contain;  /* Adjusts image to cover the container */
-  background-repeat: no-repeat; /* Prevents image repetition */
-  background-position: center; /* Centers the image */
-  width: 100%; /* Full width of the parent */
-  height: 300%; /* Fixed height for the image */
-  margin-bottom: 12px; /* Space between image and text */
-  display: block;
+/*======================================
+//--//-->   ACHIEVEMENTS PAGE
+======================================*/
+
+/* Dark Page Background */
+.dark-page {
+  background: #000000;
 }
 
-
-/* Hover effect for the certificate container */
-.certificate-container:hover {
-  /*transform: scale(1.05); /* Slight zoom-in effect */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-}
-
-@media (min-width: 768px) {
-  .certificate-container {
-    height: 300px; /* Height for tablets and larger screens */
-    max-width: 400px; /* Optional: Adjust maximum width */
-  }
-}
-
-@media (max-width: 767.98px) {
-  .certificate-container {
-    height: auto; /* Auto height for smaller screens */
-    width: 100%; /* Full width on small screens */
-    aspect-ratio: 1056 / 816; /* Maintain aspect ratio */
-  }
-}
-
-/* Optional text overlay for certificates */
-.certificate-container .text {
+/* Achievement Hero Section */
+.achievement-hero {
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #111111 100%);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
   position: relative;
-  bottom: 0;
+  overflow: hidden;
+}
+
+.achievement-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23ffbd39" opacity="0.15"/></svg>') repeat;
+  background-size: 50px 50px;
+  animation: achievementFloat 20s linear infinite;
+}
+
+@keyframes achievementFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50px); }
+}
+
+.achievement-hero .heading-section {
+  position: relative;
+  z-index: 1;
+}
+
+.achievement-hero h1.big {
+  color: rgba(255, 189, 57, 0.08);
+  font-size: 12vw;
+}
+
+.achievement-hero h2 {
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.achievement-hero p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Category Section Styles */
+.category-section {
+  padding: 5em 0;
+  background: #000000;
+}
+
+.category-section:nth-child(even) {
+  background: #0a0a0a;
+}
+
+.category-section:nth-child(odd) {
+  background: #050505;
+}
+
+.category-header {
+  margin-bottom: 3rem;
+}
+
+.category-header h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.category-header h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #ffbd39;
+}
+
+.category-header .category-icon {
+  font-size: 2.5rem;
+  color: #ffbd39;
+  margin-right: 15px;
+}
+
+/* Achievement Card Styles */
+.achievement-card {
+  background: #141414;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-bottom: 30px;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 189, 57, 0.1);
+  border-color: rgba(255, 189, 57, 0.2);
+}
+
+.achievement-card .card-image {
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+}
+
+.achievement-card .card-image img {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 8px;
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
-  color: #fff;
-  font-size: 20px;
-  text-align: center;
-  margin: 0 auto;
-  opacity: 0; /* Hidden by default */
-  transition: opacity 0.3s ease; /* Fade-in effect */
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.certificate-container:hover .text {
-  opacity: 1; /* Show overlay on hover */
+.achievement-card:hover .card-image img {
+  transform: scale(1.1);
 }
-.matha {
+
+.achievement-card .card-image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers content horizontally */
-  justify-content: center; /* Centers content vertically (if needed) */
-  text-align: center; /* Ensures the text inside is centered */
-  margin: 0 auto; /* Centers the text block itself within its parent */
-  cursor: default;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.achievement-card:hover .card-image .overlay {
+  opacity: 1;
+}
+
+.achievement-card .card-image .overlay .view-btn {
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #ffbd39;
+  padding: 8px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.achievement-card .card-image .overlay .view-btn:hover {
+  background: #ffbd39;
+  color: #000;
+}
+
+.achievement-card .card-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ffbd39;
+  color: #000;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+.achievement-card .card-content {
+  padding: 25px;
+  background: #141414;
+}
+
+.achievement-card .card-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.achievement-card .card-content h4 a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.achievement-card .card-content h4 a:hover {
+  color: #ffbd39;
+}
+
+.achievement-card .card-content .card-meta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.achievement-card .card-content .card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.achievement-card .card-content .card-meta .icon-calendar,
+.achievement-card .card-content .card-meta .icon-briefcase {
+  color: #ffbd39;
+}
+
+/* Stats Counter Section */
+.stats-section {
+  background: linear-gradient(135deg, #ffbd39 0%, #f0a500 100%);
+  padding: 4em 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.stat-item .stat-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #000;
+  line-height: 1;
+}
+
+.stat-item .stat-label {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+/* Filter Tabs (Dark Theme) */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 3rem;
+}
+
+.filter-tab {
+  padding: 12px 30px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-tab:hover,
+.filter-tab.active {
+  background: #ffbd39;
+  border-color: #ffbd39;
+  color: #000;
+}
+
+/* Dark Page CTA Section */
+.dark-page .ftco-section.bg-light {
+  background: #0a0a0a !important;
+}
+
+.dark-page .ftco-section.bg-light h2 {
+  color: #fff;
+}
+
+.dark-page .ftco-section.bg-light p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Achievements Responsive */
+@media (max-width: 767.98px) {
+  .achievement-hero h2 {
+    font-size: 2.5rem;
+  }
+  
+  .achievement-hero h1.big {
+    font-size: 18vw;
+  }
+  
+  .stat-item .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .achievement-card .card-image {
+    height: 180px;
+  }
+  
+  .category-header h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/*======================================
+//--//-->   INDEX PAGE ENHANCEMENTS
+======================================*/
+
+/* Hero Section Refinement */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23ffbd39" opacity="0.1"/></svg>') repeat;
+  background-size: 60px 60px;
+  animation: heroFloat 25s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes heroFloat {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-30px) translateX(15px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+.hero .slider-item .overlay {
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
+  opacity: 0.6;
+}
+
+/* Typing Animation Enhancement */
+#typing-animation {
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#typing-animation::after {
+  content: '|';
+  position: relative;
+  color: #ffbd39;
+  font-weight: 100;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* About Section Enhancements */
+.about-mf .box-shadow-full {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.about-mf .about-img {
+  margin-bottom: 2rem;
+}
+
+.about-mf .about-img img {
+  margin-left: 10px;
+}
+
+/* Skills Section with Animated Progress Bars */
+.skill-mf .progress {
+  margin: .5rem 0 1.2rem 0;
+  border-radius: 5px;
+  height: .7rem;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.skill-mf .progress .progress-bar {
+  height: .7rem;
+  background: linear-gradient(90deg, #ffbd39 0%, #f0a500 100%);
+  border-radius: 5px;
+  position: relative;
+  width: 0;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-mf .progress .progress-bar.animated {
+  box-shadow: 0 0 10px rgba(255, 189, 57, 0.5);
+}
+
+.skill-mf .progress .progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Resume Cards Enhancement */
+.resume-wrap {
+  width: 100%;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+  border-left: 4px solid #ffbd39;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,189,57,0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.resume-wrap:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 189, 57, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.resume-wrap:hover::before {
+  opacity: 1;
+}
+
+.resume-wrap .date {
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffbd39;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  display: inline-block;
+  background: rgba(255, 189, 57, 0.1);
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.resume-wrap h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.resume-wrap .position {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.resume-wrap p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.resume-wrap ul li {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.resume-wrap ul li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #ffbd39;
+}
+
+/* Project Cards Enhancement */
+.blog-entry {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.blog-entry:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 189, 57, 0.1);
+  border-color: rgba(255, 189, 57, 0.2);
+}
+
+.blog-entry .block-20 {
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 200px;
+  transition: transform 0.5s ease;
+}
+
+.blog-entry:hover .block-20 {
+  transform: scale(1.05);
+}
+
+.blog-entry .block-20::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blog-entry:hover .block-20::after {
+  opacity: 1;
+}
+
+.blog-entry .text {
+  padding: 25px;
+  background: #141414;
+}
+
+.blog-entry .text .heading {
   font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  line-height: 1.4;
 }
-.matha:hover{
-  color: #ffc107;
+
+.blog-entry .text .heading a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
-.matha h3 {
-  font-size: 20px; /* Adjust for heading size */
-  font-weight: normal; /* Optional: Make the heading stand out */
-  color: #fff; /* Adjust color as needed */
+
+.blog-entry .text .heading a:hover {
+  color: #ffbd39;
+}
+
+.blog-entry .text p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+/* Zoom Effect */
+.zoom-effect {
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.05);
+}
+
+/* Contact Section Boxes */
+.contact-section .box {
+  background: #141414;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 100%;
+}
+
+.contact-section .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 189, 57, 0.1);
+  border-color: rgba(255, 189, 57, 0.2);
+}
+
+.contact-section .box .icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 189, 57, 0.1);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.contact-section .box .icon span {
+  font-size: 35px;
+  color: #ffbd39;
+}
+
+.contact-section .box h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.contact-section .box p,
+.contact-section .box p a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+.contact-section .box p a:hover {
+  color: #ffbd39;
+}
+
+/* Counter Section Enhancement */
+.ftco-counter .block-18 {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.ftco-counter .block-18:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.ftco-counter .block-18 .text strong.number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffbd39;
+}
+
+.ftco-counter .block-18 .text span {
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+/* Section Headers Enhancement */
+.heading-section h1.big {
+  color: rgba(255, 189, 57, 0.08);
+}
+
+.heading-section h2 {
+  position: relative;
+  display: inline-block;
+}
+
+/* About Info List */
+.about-info li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-info li:last-child {
+  border-bottom: none;
+}
+
+.about-info li span:first-child {
+  color: #ffbd39;
+  font-weight: 600;
+  min-width: 120px;
+}
+
+/* Education Cards */
+.row .resume-wrap:nth-child(even) {
+  border-left-color: #f0a500;
+}
+
+/* Index Page Responsive */
+@media (max-width: 767.98px) {
+  #typing-animation {
+    font-size: 22px;
+  }
+  
+  .resume-wrap {
+    padding: 20px;
+  }
+  
+  .resume-wrap h2 {
+    font-size: 20px;
+  }
+  
+  .blog-entry .block-20 {
+    height: 180px;
+  }
+  
+  .contact-section .box {
+    margin-bottom: 20px;
+  }
+  
+  .ftco-counter .block-18 {
+    margin-bottom: 20px;
+  }
+}
+
+/* ============================================
+   CV PAGE STYLES
+   ============================================ */
+
+/* CV Hero Section */
+.cv-hero {
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #050505 100%);
+  padding: 180px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cv-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(255, 189, 57, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 189, 57, 0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.cv-hero-title {
+  font-size: 56px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.cv-hero-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+}
+
+.cv-hero-line {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ffbd39, #f0a500);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* CV Section */
+.cv-section {
+  background: #000;
+  padding: 80px 0 100px;
+}
+
+/* CV Card */
+.cv-card {
+  background: linear-gradient(145deg, #0f0f0f 0%, #0a0a0a 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cv-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 189, 57, 0.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(255, 189, 57, 0.1);
+}
+
+.cv-card-primary {
+  border-color: rgba(255, 189, 57, 0.2);
+}
+
+/* CV Badge */
+.cv-card-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #ffbd39, #f0a500);
+  color: #000;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 10;
+}
+
+.cv-badge-alt {
+  background: linear-gradient(135deg, #444, #333);
+  color: #fff;
+}
+
+/* CV Preview Container */
+.cv-preview-container {
+  position: relative;
+  height: 380px;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+.cv-preview {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+}
+
+.cv-preview-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cv-card:hover .cv-preview-overlay {
+  opacity: 1;
+}
+
+.cv-view-btn {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cv-view-btn:hover {
+  background: #ffbd39;
+  color: #000;
+  text-decoration: none;
+  border-color: #ffbd39;
+}
+
+.cv-view-btn span {
+  margin-right: 8px;
+}
+
+/* CV Card Content */
+.cv-card-content {
+  padding: 30px;
+}
+
+.cv-card-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.cv-card-desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.cv-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cv-card-meta span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cv-card-meta span .icon-file-pdf-o {
+  color: #ffbd39;
+  font-size: 16px;
+}
+
+/* CV Card Actions */
+.cv-card-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-cv-view,
+.btn-cv-download {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-cv-view {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-cv-view:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.btn-cv-download {
+  background: linear-gradient(135deg, #ffbd39, #f0a500);
+  color: #000;
+  border: none;
+}
+
+.btn-cv-download:hover {
+  background: linear-gradient(135deg, #ffc94d, #ffbd39);
+  color: #000;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 189, 57, 0.3);
+}
+
+/* CV Info Box */
+.cv-info-box {
+  background: linear-gradient(145deg, #0f0f0f 0%, #0a0a0a 100%);
+  border-radius: 16px;
+  padding: 30px 35px;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cv-info-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 189, 57, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cv-info-icon span {
+  font-size: 22px;
+  color: #ffbd39;
+}
+
+.cv-info-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.cv-info-content p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.cv-contact-link {
+  color: #ffbd39;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.cv-contact-link:hover {
+  color: #ffc94d;
+  text-decoration: none;
+  gap: 12px;
+}
+
+/* CV Footer Section */
+.cv-footer-section {
+  background: #000;
+  padding: 60px 0 40px;
+}
+
+.cv-cta-title {
+  font-size: 32px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.cv-cta-title span {
+  color: #ffbd39;
+}
+
+/* CV Page Responsive */
+@media (max-width: 991px) {
+  .cv-hero-title {
+    font-size: 42px;
+  }
+  
+  .cv-preview-container {
+    height: 320px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cv-hero {
+    padding: 140px 0 60px;
+  }
+  
+  .cv-hero-title {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+  
+  .cv-hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .cv-preview-container {
+    height: 280px;
+  }
+  
+  .cv-card-content {
+    padding: 25px 20px;
+  }
+  
+  .cv-card-actions {
+    flex-direction: column;
+  }
+  
+  .cv-info-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+  }
+  
+  .cv-info-icon {
+    margin: 0 auto;
+  }
 }
