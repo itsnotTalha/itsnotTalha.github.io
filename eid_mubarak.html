@@ -256,15 +256,15 @@
 		.lantern-spacer { display:none; }
 
 		/* ══════════════════════════════════
-		   MOBILE  ≤ 840px — single screen, no scroll
+		   MOBILE  ≤ 840px
 		   ══════════════════════════════════ */
 		@media (max-width: 840px) {
 
-			/* Lock to exactly viewport height */
+			/* Allow scrolling on small devices */
 			.eid-layout {
 				position: absolute !important;
 				inset: 0 !important;
-				padding: 0 !important;
+				padding: 0 0 40px !important;
 				grid-template-columns: 1fr !important;
 				grid-template-rows: auto 1fr !important;
 				gap: 0 !important;
@@ -273,7 +273,8 @@
 				align-items: stretch !important;
 				justify-content: flex-start !important;
 				height: 100% !important;
-				overflow: hidden !important;
+				overflow-y: auto !important;
+				overflow-x: hidden !important;
 			}
 
 			/* ── Spacer that pushes content below lanterns ── */
@@ -345,9 +346,9 @@
 
 			/* ── Right / bottom panel fills remainder ── */
 			.right-panel {
-				flex: 1 !important;
-				min-height: 0 !important;
-				padding: 0 16px 20px !important;
+				flex: none !important;
+				min-height: auto !important;
+				padding: 0 16px 40px !important;
 				gap: 16px !important;
 				justify-content: center !important;
 				display: flex !important;
